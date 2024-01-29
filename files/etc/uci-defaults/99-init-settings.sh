@@ -16,10 +16,10 @@ elif grep -q "OpenWrt" /etc/openwrt_release; then
 fi
 
 # Set login root password
-(echo "friwrt"; sleep 1; echo "friwrt") | passwd > /dev/null
+# (echo "friwrt"; sleep 1; echo "friwrt") | passwd > /dev/null
 
 # Set hostname and Timezone to Asia/Jakarta
-uci set system.@system[0].hostname='friWrt'
+uci set system.@system[0].hostname='ZaiyinWRT'
 uci set system.@system[0].timezone='WIB-7'
 uci set system.@system[0].zonename='Asia/Jakarta'
 uci -q delete system.ntp.server
@@ -35,7 +35,7 @@ uci set network.wan.device='/sys/devices/platform/scb/fd500000.pcie/pci0000:00/0
 uci set network.wan.apn='internet'
 uci set network.wan.auth='none'
 uci set network.wan.iptype='ipv4'
-uci set network.lan.ipaddr="192.168.1.1"
+uci set network.lan.ipaddr="192.168.1.5"
 uci set network.tethering=interface
 uci set network.tethering.proto='dhcp'
 uci set network.tethering.device='usb0'
